@@ -512,9 +512,8 @@ export function TTSStudio() {
             <div className="border-2 border-ink bg-dust/40 p-4 text-[11px] uppercase leading-relaxed md:text-xs">
               <div className="mb-2 font-bold">[ FIRST RUN ]</div>
               <p className="text-smoke">
-                First generation downloads the Kokoro model to your device —
-                ~82MB on WASM (q8), ~165MB on WebGPU (fp16).
-                Cached forever after. Every run after is near-instant.
+                First generation downloads the ~82MB Kokoro model (q8) to
+                your device. Cached forever after. Every run after is near-instant.
               </p>
             </div>
           </div>

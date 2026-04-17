@@ -14,15 +14,15 @@ const STEPS = [
   {
     n: "03",
     title: "HIT SPEAK",
-    body: "Kokoro 82M runs in your browser via transformers.js. WebGPU on modern devices, WASM fallback. No server, no API.",
+    body: "Kokoro 82M runs in your browser via transformers.js. No server, no API, no latency tax.",
   },
 ];
 
 const FACTS = [
   { k: "MODEL", v: "Kokoro 82M v1.0" },
   { k: "ENGINE", v: "transformers.js / ONNX" },
-  { k: "BACKEND", v: "WebGPU → WASM" },
-  { k: "SIZE", v: "82MB q8 / 165MB fp16" },
+  { k: "BACKEND", v: "WASM (all devices)" },
+  { k: "SIZE", v: "~82MB q8" },
   { k: "SAMPLE RATE", v: "24kHz mono" },
   { k: "LICENSE", v: "MIT + Apache 2.0" },
 ];

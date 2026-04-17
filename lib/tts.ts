@@ -42,19 +42,22 @@ let detectedBackend: BackendInfo | null = null;
 // Detect the best available inference backend.
 //
 // Priority:
-//   1. iOS/iPadOS → throw. ORT Web's WebGPU EP crashes WebKit's GPU/WASM
-//      pipeline (microsoft/onnxruntime#26827, #22776) and COEP: credentialless
-//      doesn't work on Safari (WebKit bug #230550), so WASM can't get SAB.
-//      Fixes ship with iOS 26 / Safari 26.
-//   2. WebGPU — fp16 if adapter exposes shader-f16, else fp32.
-//              Works on Android Chrome 113+ and all modern desktop.
-//   3. WASM   — requires crossOriginIsolated=true (SAB available).
-//              Covers Chrome/Firefox/Edge where WebGPU is unavailable.
-//   4. Throw  — nothing works; caller shows "unsupported" message.
+//   1. iOS/iPadOS → throw immediately. ORT WebGPU crashes WebKit (microsoft/
+//      onnxruntime#26827, #22776) and COEP:credentialless is ignored by Safari
+//      (WebKit bug #230550), so neither path works on iOS/iPadOS today.
+//   2. WASM + q8 — the known-good path. Requires crossOriginIsolated=true
+//      (SharedArrayBuffer). Provided by COEP:credentialless on Chrome/Firefox/
+//      Edge desktop and Android Chrome.
+//   3. Throw — nothing works; caller shows "unsupported" message.
+//
+// WebGPU is intentionally skipped: ORT WebGPU EP produces broken/NaN audio
+// with the Kokoro StyleTextToSpeech2 architecture on every tested platform
+// (hexgrad/kokoro#98, #193). Revisit when the upstream bug is fixed.
+// When re-enabling, prefer dtype:"q4f16" (155MB, shader-f16) or "q4" (305MB).
 export async function detectBackend(): Promise<BackendInfo> {
   if (detectedBackend) return detectedBackend;
 
-  // iPadOS Safari reports as MacIntel — catch it via maxTouchPoints > 1.
+  // iPadOS reports as MacIntel — also catch it via maxTouchPoints > 1.
   const isIOS =
     typeof navigator !== "undefined" &&
     (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
@@ -65,29 +68,8 @@ export async function detectBackend(): Promise<BackendInfo> {
     );
   }
 
-  // WebGPU probe — requestAdapter() returns null when unavailable, throws on error.
-  if (typeof navigator !== "undefined" && "gpu" in navigator) {
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const adapter = await (navigator as any).gpu.requestAdapter();
-      if (adapter) {
-        // shader-f16 is an optional WebGPU feature. Running fp16 shaders on an
-        // adapter that doesn't support it can crash the GPU process mid-inference.
-        const hasF16 = adapter.features.has("shader-f16");
-        detectedBackend = hasF16
-          ? { device: "webgpu", dtype: "fp16", modelSizeMB: 165 }
-          : { device: "webgpu", dtype: "fp32", modelSizeMB: 330 };
-        console.info(`[phono] backend: webgpu/${detectedBackend.dtype}`);
-        return detectedBackend;
-      }
-    } catch {
-      // GPU unavailable or context lost — fall through to WASM
-    }
-  }
-
-  // WASM probe — pthreads WASM requires SharedArrayBuffer, which is only
-  // exposed when crossOriginIsolated=true. credentialless COEP gives this
-  // on Chromium/Firefox; Safari ignores credentialless (WebKit bug #230550).
+  // WASM — requires crossOriginIsolated=true for SharedArrayBuffer.
+  // COEP:credentialless in next.config.ts provides this on Chromium and Firefox.
   if (typeof self !== "undefined" && self.crossOriginIsolated) {
     detectedBackend = { device: "wasm", dtype: "q8", modelSizeMB: 82 };
     console.info("[phono] backend: wasm/q8");
