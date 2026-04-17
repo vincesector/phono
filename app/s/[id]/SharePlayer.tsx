@@ -128,7 +128,7 @@ made by @0xEvinho`;
               />
             </div>
 
-            <audio ref={audioRef} src={audioUrl} preload="metadata" />
+            <audio ref={audioRef} src={audioUrl} preload="metadata" crossOrigin="anonymous" />
 
             <div className="mt-4 grid grid-cols-3 gap-2 text-[11px] uppercase">
               <button
