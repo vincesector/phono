@@ -108,24 +108,32 @@ export function TTSStudio() {
       console.info("[phono] generating", { chars: cleanText.length, sentences: sentences.length, voice, speed });
 
       const t0 = performance.now();
-      let totalRetries = 0;
+      let skippedCount = 0;
 
       for (let i = 0; i < sentences.length; i++) {
         const s = sentences[i];
         setLoadMsg(`sentence ${i + 1}/${sentences.length}`);
-        const result = await generateSentenceWithRetry(tts, s, voice, speed, (attempt, reason) => {
-          totalRetries++;
-          console.warn(`[phono] sentence ${i + 1} retry ${attempt}: ${reason}`);
-        });
-        console.info(`[phono] sentence ${i + 1}/${sentences.length}: ${(result.audio.length / result.sampling_rate).toFixed(2)}s audio · "${s.slice(0, 50)}${s.length > 50 ? "…" : ""}"`);
-        sampleRateRef.current = result.sampling_rate;
-        chunksRef.current.push(result.audio);
+        const raw = await tts.generate(s, { voice, speed });
+        const { mean, nanRatio } = analyseAudio(raw.audio);
+        const sec = raw.audio.length / raw.sampling_rate;
+        const broken = nanRatio > 0.01 || mean < 0.015;
+        console.info(
+          `[phono] sentence ${i + 1}/${sentences.length}: ${sec.toFixed(2)}s mean=${mean.toFixed(4)} nan=${(nanRatio * 100).toFixed(0)}% ${broken ? "SKIPPED (voice cannot say this)" : "ok"} · "${s.slice(0, 50)}${s.length > 50 ? "…" : ""}"`
+        );
+        if (broken) {
+          skippedCount++;
+          continue;
+        }
+        sampleRateRef.current = raw.sampling_rate;
+        chunksRef.current.push(raw.audio);
       }
 
-      console.info(`[phono] total ${((performance.now() - t0) / 1000).toFixed(1)}s, ${totalRetries} retries`);
+      console.info(`[phono] total ${((performance.now() - t0) / 1000).toFixed(1)}s, ${skippedCount} skipped`);
 
       if (chunksRef.current.length === 0) {
-        throw new Error("no audio produced (try different text)");
+        throw new Error(
+          "this voice couldn't say any of the text — try another voice or different wording"
+        );
       }
 
       const full = concatFloat32(chunksRef.current);
@@ -487,43 +495,22 @@ function formatMB(bytes: number): string {
   return (bytes / 1024 / 1024).toFixed(1);
 }
 
-type GenResult = { audio: Float32Array; sampling_rate: number };
-
-async function generateSentenceWithRetry(
-  tts: {
-    generate: (
-      text: string,
-      opts: { voice: VoiceId; speed: number }
-    ) => Promise<GenResult>;
-  },
-  sentence: string,
-  voice: VoiceId,
-  speed: number,
-  onRetry: (attempt: number, reason: string) => void
-): Promise<GenResult> {
-  const variants = [
-    sentence,
-    ". " + sentence,
-    "— " + sentence,
-    sentence.charAt(0).toLowerCase() + sentence.slice(1),
-  ];
-
-  let last: GenResult | null = null;
-  for (let i = 0; i < variants.length; i++) {
-    const raw = await tts.generate(variants[i], { voice, speed });
-    const expectedSec = Math.max(0.5, sentence.length * 0.045);
-    const actualSec = raw.audio.length / raw.sampling_rate;
-    if (actualSec >= expectedSec) {
-      if (i > 0) onRetry(i, `variant ${i} worked (${actualSec.toFixed(2)}s)`);
-      return raw;
+function analyseAudio(samples: Float32Array): { mean: number; nanRatio: number } {
+  let sum = 0;
+  let nanCount = 0;
+  for (let i = 0; i < samples.length; i++) {
+    const v = samples[i];
+    if (Number.isNaN(v)) {
+      nanCount++;
+      continue;
     }
-    last = raw;
-    onRetry(
-      i + 1,
-      `only ${actualSec.toFixed(2)}s audio for ${sentence.length} chars (expected ≥${expectedSec.toFixed(2)}s)`
-    );
+    sum += Math.abs(v);
   }
-  return last!;
+  const valid = samples.length - nanCount;
+  return {
+    mean: valid > 0 ? sum / valid : 0,
+    nanRatio: nanCount / samples.length,
+  };
 }
 
 function splitSentences(text: string): string[] {

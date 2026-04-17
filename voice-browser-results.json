@@ -1,0 +1,816 @@
+{
+  "results": [
+    {
+      "voice": "af_heart",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 2.85,
+          "mean": 0.03787124068764915,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.6,
+          "mean": 0.03428723277953955,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.375,
+          "mean": 0.03907846900563181,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_bella",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.25,
+          "mean": 0.036128073915457116,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.9,
+          "mean": 0.033215555480156825,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.675,
+          "mean": 0.0393007615391089,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_nicole",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 4.275,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.525,
+          "mean": 0.034294804278276775,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 4.75,
+          "mean": 0.03643826837706984,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_sarah",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.15,
+          "mean": 0.04039716185085357,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.025,
+          "mean": 0.03784747815657581,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.725,
+          "mean": 0.04186631121358082,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_sky",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.325,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.925,
+          "mean": 0.03256120743235292,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.525,
+          "mean": 0.034881941184366286,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_aoede",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 2.8,
+          "mean": 0.06799873600048678,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.475,
+          "mean": 0.060297989773027826,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.2,
+          "mean": 0.06613503004734715,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_kore",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 2.75,
+          "mean": 0.06338737150394555,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.55,
+          "mean": 0.05497611309967789,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.2,
+          "mean": 0.062318341614057624,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_nova",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.375,
+          "mean": 0.024901714954847172,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.025,
+          "mean": 0.023198158396177056,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.6,
+          "mean": 0.02467283028971266,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_river",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.075,
+          "mean": 0.04641682185454744,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.725,
+          "mean": 0.045694310752623674,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.3,
+          "mean": 0.045275601585104006,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_alloy",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.475,
+          "mean": 0.04447045353390902,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.2,
+          "mean": 0.042160418514783186,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.725,
+          "mean": 0.04395589651144058,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "af_jessica",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3,
+          "mean": 0.04577168157696724,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.65,
+          "mean": 0.044080357806487655,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.275,
+          "mean": 0.0451802081430838,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "am_adam",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.025,
+          "mean": 0.056922836004866716,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.75,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.325,
+          "mean": 0.05761365980432745,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "am_michael",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.2,
+          "mean": 0.03088752337731421,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.1,
+          "mean": 0.031030383799024806,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.825,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        }
+      ]
+    },
+    {
+      "voice": "am_onyx",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.45,
+          "mean": 0.04153037089944462,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.175,
+          "mean": 0.0393621916282834,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.75,
+          "mean": 0.03974855408668518,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "am_fenrir",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 2.65,
+          "mean": 0.05565726352187823,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.375,
+          "mean": 0.05120210750897725,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.025,
+          "mean": 0.05520985528128863,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "am_echo",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.45,
+          "mean": 0.04306046241723397,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.075,
+          "mean": 0.03992989657694085,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.7,
+          "mean": 0.041205969001795795,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "am_eric",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.05,
+          "mean": 0.05467187277606276,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.575,
+          "mean": 0.0527588964858873,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.25,
+          "mean": 0.05521323795502003,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "am_liam",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.025,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.675,
+          "mean": 0.04736499165820184,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.275,
+          "mean": 0.04870719102502779,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "am_puck",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 2.675,
+          "mean": 0.05908376118104406,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.35,
+          "mean": 0.05517736253586221,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.05,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        }
+      ]
+    },
+    {
+      "voice": "bf_emma",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.15,
+          "mean": 0.05022747182972217,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.9,
+          "mean": 0.04755481304450967,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.45,
+          "mean": 0.04957243647840288,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "bf_isabella",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.225,
+          "mean": 0.07083978978854433,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.9,
+          "mean": 0.06453016754882089,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.45,
+          "mean": 0.0674233792628643,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "bf_alice",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.25,
+          "mean": 0.053419075458477704,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.875,
+          "mean": 0.05110474249245464,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.325,
+          "mean": 0.0523212234358441,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "bf_lily",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.325,
+          "mean": 0.05224627322720406,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3,
+          "mean": 0.05089485338992543,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.375,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        }
+      ]
+    },
+    {
+      "voice": "bm_george",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.775,
+          "mean": 0.052454454414628725,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.175,
+          "mean": 0.049342197214211694,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.75,
+          "mean": 0.05345437397956848,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "bm_lewis",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.6,
+          "mean": 0.030165746907393137,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.275,
+          "mean": 0.028015721511598157,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.9,
+          "mean": 0.03025339667358969,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "bm_daniel",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.225,
+          "mean": 0.048738442631654964,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 2.95,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.35,
+          "mean": 0.04906781759428148,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    },
+    {
+      "voice": "bm_fable",
+      "per": [
+        {
+          "sentence": 1,
+          "text": "Phono runs entirely in your browser.",
+          "sec": 3.475,
+          "mean": 0.036990013682870845,
+          "nanRatio": 0,
+          "broken": false
+        },
+        {
+          "sentence": 2,
+          "text": "Your text never touches a server.",
+          "sec": 3.225,
+          "mean": 0,
+          "nanRatio": 1,
+          "broken": true
+        },
+        {
+          "sentence": 3,
+          "text": "No signup, no API key, no paywall.",
+          "sec": 3.8,
+          "mean": 0.03944626749607555,
+          "nanRatio": 0,
+          "broken": false
+        }
+      ]
+    }
+  ],
+  "brokenByVoice": {
+    "af_nicole": [
+      1
+    ],
+    "af_sky": [
+      1
+    ],
+    "am_adam": [
+      2
+    ],
+    "am_michael": [
+      3
+    ],
+    "am_liam": [
+      1
+    ],
+    "am_puck": [
+      3
+    ],
+    "bf_lily": [
+      3
+    ],
+    "bm_daniel": [
+      2
+    ],
+    "bm_fable": [
+      2
+    ]
+  }
+}
