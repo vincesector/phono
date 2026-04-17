@@ -1,3 +1,5 @@
+import { VOICES } from "@/lib/voices";
+
 const STEPS = [
   {
     n: "01",
@@ -7,7 +9,7 @@ const STEPS = [
   {
     n: "02",
     title: "PICK A VOICE",
-    body: "27 voices shipped with the model. US and UK accents. Male, female, warm, sharp, deep, intimate.",
+    body: `${VOICES.length} voices curated from Kokoro. US and UK accents. Male, female, warm, sharp, deep, intimate.`,
   },
   {
     n: "03",

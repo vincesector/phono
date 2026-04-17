@@ -1,4 +1,5 @@
 import { HeroArt } from "./HeroArt";
+import { VOICES } from "@/lib/voices";
 
 export function Hero() {
   return (
@@ -35,7 +36,7 @@ export function Hero() {
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] uppercase text-smoke md:mt-10 md:gap-x-6 md:text-xs">
             <span>↳ runs on device</span>
-            <span>↳ 27 voices</span>
+            <span>↳ {VOICES.length} voices</span>
             <span>↳ 82M params</span>
             <span>↳ WebGPU / WASM</span>
           </div>
