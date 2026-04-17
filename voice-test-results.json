@@ -1,0 +1,731 @@
+[
+  {
+    "voice": "af_heart",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 2.85,
+    "energy": 0.03786885692013635,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_heart",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.6,
+    "energy": 0.03427700148178981,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_heart",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.375,
+    "energy": 0.039067884159676824,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_bella",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.25,
+    "energy": 0.03613033966223399,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_bella",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.9,
+    "energy": 0.03322820274994291,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_bella",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.675,
+    "energy": 0.039310695354630346,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_nicole",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 4.275,
+    "energy": 0.03741906565299973,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_nicole",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.525,
+    "energy": 0,
+    "nanRatio": 1,
+    "silent": true
+  },
+  {
+    "voice": "af_nicole",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 4.75,
+    "energy": 0.036523805530447706,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_sarah",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.15,
+    "energy": 0.04046870543212487,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_sarah",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.025,
+    "energy": 0,
+    "nanRatio": 1,
+    "silent": true
+  },
+  {
+    "voice": "af_sarah",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.725,
+    "energy": 0.041861612242073555,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_sky",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.325,
+    "energy": 0.034633940488174746,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_sky",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.925,
+    "energy": 0.03258685594949967,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_sky",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.525,
+    "energy": 0.034933663688371086,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_aoede",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 2.8,
+    "energy": 0.0680302862432741,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_aoede",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.475,
+    "energy": 0.0602574392962536,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_aoede",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.2,
+    "energy": 0,
+    "nanRatio": 1,
+    "silent": true
+  },
+  {
+    "voice": "af_kore",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 2.75,
+    "energy": 0.06339333419366316,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_kore",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.55,
+    "energy": 0.05501441802853852,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_kore",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.2,
+    "energy": 0.06236414127362271,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_nova",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.375,
+    "energy": 0.02490780798005469,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_nova",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.025,
+    "energy": 0.023171811291008943,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_nova",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.6,
+    "energy": 0.02469347576024356,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_river",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.075,
+    "energy": 0.0463905987119287,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_river",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.725,
+    "energy": 0.0456979584475176,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_river",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.3,
+    "energy": 0.04528689347433321,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_alloy",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.475,
+    "energy": 0.04450286112243323,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_alloy",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.2,
+    "energy": 0,
+    "nanRatio": 1,
+    "silent": true
+  },
+  {
+    "voice": "af_alloy",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.725,
+    "energy": 0.043974508295123206,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_jessica",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3,
+    "energy": 0.045783117281066044,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_jessica",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.65,
+    "energy": 0.044063837453254366,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "af_jessica",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.275,
+    "energy": 0.04518118670575188,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_adam",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.025,
+    "energy": 0.05696372605552358,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_adam",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.75,
+    "energy": 0.05675529340541724,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_adam",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.325,
+    "energy": 0.057673952486879544,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_michael",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.2,
+    "energy": 0.03086552499483029,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_michael",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.1,
+    "energy": 0.03101721440912575,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_michael",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.825,
+    "energy": 0.03245274160422531,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_onyx",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.45,
+    "energy": 0.04151519335410445,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_onyx",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.175,
+    "energy": 0.0394025037920694,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_onyx",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.75,
+    "energy": 0.03972487507926093,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_fenrir",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 2.65,
+    "energy": 0.055652307118259886,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_fenrir",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.375,
+    "energy": 0.05125627351643746,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_fenrir",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.025,
+    "energy": 0.05519599611765754,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_echo",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.45,
+    "energy": 0.04306675995317634,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_echo",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.075,
+    "energy": 0.03989848093288701,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_echo",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.7,
+    "energy": 0.04120790677833128,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_eric",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.05,
+    "energy": 0.054680028372123594,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_eric",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.575,
+    "energy": 0.052749992616739856,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_eric",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.25,
+    "energy": 0.05527715277060484,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_liam",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.025,
+    "energy": 0.04835788098576969,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_liam",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.7,
+    "energy": 0.04736902196466187,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_liam",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.275,
+    "energy": 0.04872778489086161,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_puck",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 2.675,
+    "energy": 0.05911802330121073,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_puck",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.35,
+    "energy": 0.055137676930596645,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "am_puck",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.05,
+    "energy": 0.05889916320316127,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_emma",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.15,
+    "energy": 0.050208416120715874,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_emma",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.9,
+    "energy": 0.04756553486845959,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_emma",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.45,
+    "energy": 0.04955467422515298,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_isabella",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.225,
+    "energy": 0.07086888236284872,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_isabella",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.9,
+    "energy": 0.06448757418955879,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_isabella",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.45,
+    "energy": 0.06742703980869717,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_alice",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.25,
+    "energy": 0.05350397067803603,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_alice",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.875,
+    "energy": 0.05104941215722457,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_alice",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.325,
+    "energy": 0.05242636577826096,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_lily",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.325,
+    "energy": 0,
+    "nanRatio": 1,
+    "silent": true
+  },
+  {
+    "voice": "bf_lily",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3,
+    "energy": 0.05090837802158462,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bf_lily",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.375,
+    "energy": 0.051159573284196264,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_george",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.775,
+    "energy": 0.05251841225371456,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_george",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.175,
+    "energy": 0.04937116413291671,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_george",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.75,
+    "energy": 0.05347890067365434,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_lewis",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.6,
+    "energy": 0,
+    "nanRatio": 1,
+    "silent": true
+  },
+  {
+    "voice": "bm_lewis",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.275,
+    "energy": 0.02807832635995996,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_lewis",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.9,
+    "energy": 0.030285736189948186,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_daniel",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.225,
+    "energy": 0.04879488843355992,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_daniel",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 2.95,
+    "energy": 0.04652809684222701,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_daniel",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.35,
+    "energy": 0.049048469760524696,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_fable",
+    "sentence": 1,
+    "text": "Phono runs entirely in your browser.",
+    "sec": 3.475,
+    "energy": 0.036974967503719196,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_fable",
+    "sentence": 2,
+    "text": "Your text never touches a server.",
+    "sec": 3.225,
+    "energy": 0.03534631847411163,
+    "nanRatio": 0,
+    "silent": false
+  },
+  {
+    "voice": "bm_fable",
+    "sentence": 3,
+    "text": "No signup, no API key, no paywall.",
+    "sec": 3.8,
+    "energy": 0.03948120470371163,
+    "nanRatio": 0,
+    "silent": false
+  }
+]

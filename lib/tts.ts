@@ -60,6 +60,9 @@ export async function getTTS(onProgress?: ProgressCb): Promise<KokoroInstance> {
       });
       isReady = true;
       console.info("[phono] model ready");
+      if (typeof window !== "undefined") {
+        (window as unknown as { __phono_tts?: unknown }).__phono_tts = tts;
+      }
       return tts as unknown as KokoroInstance;
     } catch (e) {
       console.error("[phono] model load failed", e);
