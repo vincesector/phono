@@ -37,6 +37,7 @@ export function TTSStudio() {
   const [copied, setCopied] = useState(false);
 
   const ctxRef = useRef<AudioContext | null>(null);
+  const analyserRef = useRef<AnalyserNode | null>(null);
   const chunksRef = useRef<Float32Array[]>([]);
   const sampleRateRef = useRef(24000);
   const preloadStartedRef = useRef(false);
@@ -62,6 +63,13 @@ export function TTSStudio() {
         preloadStartedRef.current = false;
         setPreloading(false);
       });
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      analyserRef.current?.disconnect();
+      ctxRef.current?.close();
+    };
   }, []);
 
   useEffect(() => {
@@ -207,10 +215,16 @@ export function TTSStudio() {
     const ctx = ctxRef.current;
     if (ctx.state === "suspended") await ctx.resume();
 
+    // Disconnect previous analyser before creating a new one to prevent accumulation.
+    if (analyserRef.current) {
+      analyserRef.current.disconnect();
+      analyserRef.current = null;
+    }
     const analyserNode = ctx.createAnalyser();
     analyserNode.fftSize = 1024;
     analyserNode.smoothingTimeConstant = 0.75;
     analyserNode.connect(ctx.destination);
+    analyserRef.current = analyserNode;
     setAnalyser(analyserNode);
 
     const buf = ctx.createBuffer(1, samples.length, sampleRate);

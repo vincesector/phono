@@ -29,14 +29,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const data = await getShareData(id);
   if (!data) return { title: "Shared clip not found · PHONO" };
-  const preview = data.meta.textPreview.slice(0, 140);
+  const preview = (data.meta.textPreview ?? "").slice(0, 140);
   return {
     title: `${data.meta.voiceLabel} speaks on PHONO`,
     description: preview,
     openGraph: {
       title: `${data.meta.voiceLabel} on PHONO`,
       description: preview,
-      type: "music.song",
+      type: "website",
     },
     twitter: {
       card: "summary_large_image",

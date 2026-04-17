@@ -42,6 +42,17 @@ export async function getTTS(onProgress?: ProgressCb): Promise<KokoroInstance> {
   instancePromise = (async () => {
     console.info("[phono] loading kokoro-js (wasm/q8 ~82MB)");
 
+    // Preflight: the pthreads WASM build unconditionally requires SharedArrayBuffer
+    // at instantiation time. iOS 16 and older don't support COEP: credentialless,
+    // so crossOriginIsolated=false → SAB unavailable → WASM throws or hangs opaquely.
+    // Detect this early and surface a clear message instead.
+    if (typeof SharedArrayBuffer === "undefined" || !self.crossOriginIsolated) {
+      instancePromise = null;
+      throw new Error(
+        "requires iOS 17+ or Safari 17+ — your browser cannot run the on-device model"
+      );
+    }
+
     // Configure ORT for iOS Safari / Brave (WebKit) compatibility.
     //
     // Problem 1 — WebKit JIT crash (WebKit bug #304810):
