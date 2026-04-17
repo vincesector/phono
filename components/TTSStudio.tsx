@@ -37,6 +37,7 @@ export function TTSStudio() {
   const [copied, setCopied] = useState(false);
   const [backend, setBackend] = useState<BackendInfo | null>(null);
   const [backendUnsupported, setBackendUnsupported] = useState(false);
+  const [backendError, setBackendError] = useState<string | null>(null);
 
   const ctxRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
@@ -78,7 +79,10 @@ export function TTSStudio() {
   useEffect(() => {
     detectBackend()
       .then((b) => setBackend(b))
-      .catch(() => setBackendUnsupported(true));
+      .catch((e: unknown) => {
+        setBackendUnsupported(true);
+        setBackendError(e instanceof Error ? e.message : "Browser not supported.");
+      });
   }, []);
 
   useEffect(() => {
@@ -411,7 +415,7 @@ export function TTSStudio() {
               )}
               {!busy && backendUnsupported && (
                 <div className="mb-3 border border-signal px-3 py-2 text-[10px] uppercase text-signal">
-                  browser not supported — open in Chrome, Firefox, or iOS 18+ Safari
+                  {backendError ?? "Browser not supported."}
                 </div>
               )}
 
