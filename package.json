@@ -2,12 +2,33 @@
   "name": "phono",
   "version": "0.1.0",
   "private": true,
+  "description": "Browser-native text-to-speech. Free, open-source, runs entirely in your browser via Kokoro-82M + transformers.js.",
+  "license": "MIT",
+  "author": "0xEvinho",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xEvinho/phono"
+  },
+  "homepage": "https://phono.vercel.app",
+  "keywords": [
+    "tts",
+    "text-to-speech",
+    "kokoro",
+    "transformers.js",
+    "webgpu",
+    "next.js",
+    "browser-native",
+    "open-source"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "@vercel/blob": "^2.3.3",
+    "kokoro-js": "^1.2.1",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"

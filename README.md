@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PHONO
 
-## Getting Started
+**Browser-native text-to-speech. Free, forever. No signup, no API key, no paywall.**
 
-First, run the development server:
+Phono runs [Kokoro-82M](https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX) entirely inside your browser via [transformers.js](https://huggingface.co/docs/transformers.js). Your text never touches a server. Generate audio, download MP3, share a link.
+
+Live: [phono.vercel.app](https://phono.vercel.app)
+
+## Stack
+
+- Next.js 16 + React 19
+- Tailwind CSS v4
+- kokoro-js 1.2 (ONNX Runtime Web, WASM backend, fp16 weights)
+- `@breezystack/lamejs` for MP3 encoding in the browser
+- `@vercel/blob` for share-link storage
+- Hosted on Vercel
+
+## Why
+
+ElevenLabs is $22/month. The open-source community has shipped a 82M-parameter TTS model that produces perfectly usable speech on a laptop, with zero inference cost. Phono is a thin, brutalist wrapper around that.
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). First generation downloads ~165MB of model weights (cached after).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Share links (optional)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Share functionality requires a [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) store. Copy `.env.local.example` to `.env.local` and fill in:
 
-## Learn More
+```
+BLOB_READ_WRITE_TOKEN=...
+NEXT_PUBLIC_BLOB_BASE_URL=https://XXXXX.public.blob.vercel-storage.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+Download and tweet buttons work without these. The follow CTA is hardcoded to [@0xEvinho](https://x.com/0xEvinho).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MIT (this code). The Kokoro model is licensed Apache 2.0.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built by [@0xEvinho](https://x.com/0xEvinho).
