@@ -42,19 +42,29 @@ export async function getTTS(onProgress?: ProgressCb): Promise<KokoroInstance> {
   instancePromise = (async () => {
     console.info("[phono] loading kokoro-js (wasm/q8 ~82MB)");
 
-    // Redirect JSEP→non-JSEP WASM before loading the model.
-    // The default JSEP build uses ASYNCIFY which triggers an infinite loop in
-    // WebKit's OMG JIT compiler (WebKit bug #304810), crashing iOS Safari/Brave.
-    // The non-JSEP build has no ASYNCIFY and works on all platforms.
-    // numThreads=1 avoids SharedArrayBuffer dependency (unavailable without COEP).
+    // Configure ORT for iOS Safari / Brave (WebKit) compatibility.
+    //
+    // Problem 1 — WebKit JIT crash (WebKit bug #304810):
+    //   The default JSEP wasm uses ASYNCIFY, which causes WebKit's OMG JIT to
+    //   spin infinitely during compilation, killing the tab.
+    //   Fix: use fs-eire's custom non-threaded, non-JSEP build (ort-wasm-simd).
+    //
+    // Problem 2 — inference hangs after model loads:
+    //   The "threaded" wasm build spawns a proxy Web Worker by default and uses
+    //   Atomics on SharedArrayBuffer to signal results back to the main thread.
+    //   Without crossOriginIsolated (Safari ignores COEP: credentialless),
+    //   SharedArrayBuffer is unavailable, so Atomics.wait() never resolves.
+    //   Fix: proxy=false forces inference onto the main thread; numThreads=1
+    //   prevents any worker-thread spawning.
     const { env } = await import("@huggingface/transformers");
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const onnxWasm = (env.backends.onnx as any).wasm;
     if (onnxWasm) {
+      onnxWasm.proxy = false;
       onnxWasm.numThreads = 1;
       onnxWasm.wasmPaths = {
-        wasm: "/phono/ort-wasm-simd-threaded.wasm",
-        mjs: "/phono/ort-wasm-simd-threaded.mjs",
+        wasm: "/phono/ort-wasm-simd.wasm",
+        mjs: "/phono/ort-wasm-simd.mjs",
       };
     }
 
