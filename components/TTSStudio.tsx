@@ -5,6 +5,7 @@ import { getTTS, isTTSReady, type ProgressInfo } from "@/lib/tts";
 import { concatFloat32 } from "@/lib/wav";
 import { encodeMp3 } from "@/lib/mp3";
 import { createShareLink, buildTwitterIntent } from "@/lib/share";
+import { withBase } from "@/lib/basePath";
 import { DEFAULT_VOICE, VOICES, type VoiceId } from "@/lib/voices";
 import { VoiceGrid } from "./VoiceGrid";
 import { Waveform } from "./Waveform";
@@ -165,7 +166,7 @@ export function TTSStudio() {
         textPreview: text.slice(0, 280),
         createdAt: new Date().toISOString(),
       });
-      const absoluteUrl = new URL(result.url, window.location.origin).toString();
+      const absoluteUrl = new URL(withBase(result.url), window.location.origin).toString();
       setShareUrl(absoluteUrl);
       setShareState("done");
       await navigator.clipboard.writeText(absoluteUrl);

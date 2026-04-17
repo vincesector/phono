@@ -1,5 +1,7 @@
 "use client";
 
+import { withBase } from "./basePath";
+
 export type ShareMeta = {
   voice: string;
   voiceLabel: string;
@@ -23,7 +25,7 @@ export async function createShareLink(
   form.append("audio", audioBlob, "audio.mp3");
   form.append("meta", JSON.stringify(meta));
 
-  const res = await fetch("/api/share", { method: "POST", body: form });
+  const res = await fetch(withBase("/api/share"), { method: "POST", body: form });
   const data = await res.json();
   if (!res.ok || !data.ok) {
     throw new Error(data.error ?? `share failed (${res.status})`);

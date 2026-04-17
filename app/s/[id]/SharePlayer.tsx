@@ -79,11 +79,11 @@ made by @0xEvinho`;
     <main className="min-h-screen bg-paper text-ink">
       <div className="border-b-2 border-ink px-4 py-4 md:px-8 xl:px-12">
         <div className="flex items-center justify-between">
-          <a href="/" className="font-display text-2xl leading-none tracking-wider md:text-3xl">
+          <a href="/phono" className="font-display text-2xl leading-none tracking-wider md:text-3xl">
             PHONO<span className="text-signal">.</span>
           </a>
           <a
-            href="/"
+            href="/phono"
             className="border-2 border-ink bg-ink px-4 py-2 text-xs font-bold uppercase text-paper hover:bg-signal hover:border-signal hover:text-ink"
           >
             MAKE YOUR OWN →
@@ -165,7 +165,7 @@ made by @0xEvinho`;
               No upload. No paywall.
             </p>
             <a
-              href="/"
+              href="/phono"
               className="mt-4 inline-block border-2 border-ink bg-ink px-5 py-3 text-xs font-bold uppercase text-paper hover:bg-signal hover:border-signal hover:text-ink"
             >
               &gt; MAKE A CLIP

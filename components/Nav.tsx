@@ -3,7 +3,7 @@ export function Nav() {
     <nav className="border-b-2 border-ink">
       <div className="flex items-center justify-between px-4 py-4 md:px-8 xl:px-12">
         <a
-          href="#top"
+          href="/phono"
           className="font-display text-2xl leading-none tracking-wider md:text-3xl"
           aria-label="PHONO"
         >
