@@ -159,7 +159,7 @@ export default async function OG() {
             <div style={{ display: "flex", color: FOG }}>·</div>
             <div style={{ display: "flex" }}>MIT</div>
           </div>
-          <div style={{ display: "flex", color: SIGNAL }}>phonoapp.vercel.app</div>
+          <div style={{ display: "flex", color: SIGNAL }}>evinho.xyz/phono</div>
         </div>
       </div>
     ),

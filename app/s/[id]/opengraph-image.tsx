@@ -155,7 +155,7 @@ export default async function OG({ params }: { params: Promise<{ id: string }> }
           }}
         >
           <div style={{ display: "flex" }}>▶ LISTEN ON PHONO</div>
-          <div style={{ display: "flex", color: SIGNAL }}>phonoapp.vercel.app/s/{id}</div>
+          <div style={{ display: "flex", color: SIGNAL }}>evinho.xyz/phono/s/{id}</div>
         </div>
       </div>
     ),
