@@ -16,11 +16,11 @@ const display = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "PHONO // BROWSER-NATIVE TEXT TO SPEECH",
+  title: "Phono TTS",
   description:
     "Free, open-source text-to-speech that runs entirely in your browser. No signup. No upload. No bullshit.",
   openGraph: {
-    title: "PHONO",
+    title: "Phono TTS",
     description: "BROWSER-NATIVE TEXT TO SPEECH. ZERO COST.",
     type: "website",
   },
