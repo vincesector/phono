@@ -54,7 +54,7 @@ export async function getTTS(onProgress?: ProgressCb): Promise<KokoroInstance> {
     if (!sabAvailable) {
       instancePromise = null;
       throw new Error(
-        "requires iOS 17+ or Safari 17+ — your browser cannot run the on-device model"
+        "SharedArrayBuffer unavailable — try reloading, or use Chrome/Safari 17+"
       );
     }
 

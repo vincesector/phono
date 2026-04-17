@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, VT323 } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -41,6 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${mono.variable} ${display.variable}`}>
+      {/* Inject COEP/COOP headers client-side so crossOriginIsolated=true regardless
+          of which domain or proxy serves this page. Required for SharedArrayBuffer
+          (pthreads WASM / onnxruntime-web). Causes a one-time transparent reload on
+          first visit to install the service worker. */}
+      <Script src="/coi-serviceworker.js" strategy="beforeInteractive" />
       <body className="min-h-screen bg-paper text-ink font-mono antialiased selection:bg-ink selection:text-paper">
         {children}
         <Analytics />
