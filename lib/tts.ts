@@ -40,12 +40,12 @@ export async function getTTS(onProgress?: ProgressCb): Promise<KokoroInstance> {
   }
 
   instancePromise = (async () => {
-    console.info("[phono] loading kokoro-js (wasm/fp16 ~165MB)");
+    console.info("[phono] loading kokoro-js (wasm/q8 ~82MB)");
     const { KokoroTTS } = await import("kokoro-js");
 
     try {
       const tts = await KokoroTTS.from_pretrained(MODEL_ID, {
-        dtype: "fp16",
+        dtype: "q8",
         device: "wasm",
         progress_callback: (info: ProgressInfo) => {
           onProgress?.({

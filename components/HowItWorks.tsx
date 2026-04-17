@@ -21,8 +21,8 @@ const STEPS = [
 const FACTS = [
   { k: "MODEL", v: "Kokoro 82M v1.0" },
   { k: "ENGINE", v: "transformers.js / ONNX" },
-  { k: "BACKEND", v: "WebGPU → WASM fallback" },
-  { k: "SIZE", v: "~165MB fp16" },
+  { k: "BACKEND", v: "WASM (all devices)" },
+  { k: "SIZE", v: "~82MB q8" },
   { k: "SAMPLE RATE", v: "24kHz mono" },
   { k: "LICENSE", v: "MIT + Apache 2.0" },
 ];

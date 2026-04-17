@@ -375,7 +375,7 @@ export function TTSStudio() {
                   <span className="truncate">
                     {preloading
                       ? `↓ preloading model ${loadPct ? Math.round(loadPct) + "%" : ""}`
-                      : "~165MB downloads on first SPEAK"}
+                      : "~82MB downloads on first SPEAK"}
                   </span>
                   <span className="shrink-0">first run only</span>
                 </div>
@@ -480,7 +480,7 @@ export function TTSStudio() {
             <div className="border-2 border-ink bg-dust/40 p-4 text-[11px] uppercase leading-relaxed md:text-xs">
               <div className="mb-2 font-bold">[ FIRST RUN ]</div>
               <p className="text-smoke">
-                First generation downloads a ~165MB kokoro model (fp16) to your device.
+                First generation downloads a ~82MB kokoro model (q8) to your device.
                 Cached forever after. Every run after is near-instant.
               </p>
             </div>
