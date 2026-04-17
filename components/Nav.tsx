@@ -17,7 +17,7 @@ export function Nav() {
             [ HOW ]
           </a>
           <a
-            href="https://github.com/0xEvinho/phono"
+            href="https://github.com/vincesector/phono"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden hover:text-signal md:inline"

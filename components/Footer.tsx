@@ -90,7 +90,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/0xEvinho/phono"
+                    href="https://github.com/vincesector/phono"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-signal"
