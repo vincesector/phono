@@ -104,21 +104,46 @@ export function TTSStudio() {
       setLoadBytes(null);
 
       const cleanText = text.trim().replace(/\s+/g, " ");
-      const sentences = splitSentences(cleanText);
-      console.info("[phono] generating", { chars: cleanText.length, sentences: sentences.length, voice, speed });
+      console.info("[phono] generating", { chars: cleanText.length, voice, speed });
 
       const t0 = performance.now();
-      for (let i = 0; i < sentences.length; i++) {
-        const s = sentences[i];
-        setLoadMsg(`sentence ${i + 1}/${sentences.length}`);
-        console.info(`[phono] sentence ${i + 1}/${sentences.length}: "${s.slice(0, 60)}${s.length > 60 ? "…" : ""}"`);
-        const sT0 = performance.now();
-        const raw = await tts.generate(s, { voice, speed });
-        console.info(`[phono] sentence ${i + 1} done in ${((performance.now() - sT0) / 1000).toFixed(1)}s (${raw.audio.length} samples)`);
+
+      // Prefer one-shot generation: lets kokoro handle sentence boundaries
+      // internally. Sentence-splitting fallback only if one-shot produces
+      // suspiciously short audio (<1s) or throws.
+      let usedFallback = false;
+      try {
+        setLoadMsg("synthesizing");
+        const raw = await tts.generate(cleanText, { voice, speed });
+        const sec = raw.audio.length / raw.sampling_rate;
+        const expectedMinSec = Math.max(1.5, cleanText.length * 0.03);
+        console.info(`[phono] one-shot: ${raw.audio.length} samples (${sec.toFixed(1)}s, expected ≥${expectedMinSec.toFixed(1)}s)`);
+        if (sec < expectedMinSec) {
+          throw new Error(`truncated output (${sec.toFixed(1)}s for ${cleanText.length} chars)`);
+        }
         sampleRateRef.current = raw.sampling_rate;
         chunksRef.current.push(raw.audio);
+      } catch (oneShotErr) {
+        usedFallback = true;
+        console.warn("[phono] one-shot failed, falling back to per-sentence", oneShotErr);
+        chunksRef.current = [];
+        const sentences = splitSentences(cleanText);
+        for (let i = 0; i < sentences.length; i++) {
+          const s = sentences[i];
+          setLoadMsg(`sentence ${i + 1}/${sentences.length}`);
+          const sT0 = performance.now();
+          const raw = await tts.generate(s, { voice, speed });
+          const sec = raw.audio.length / raw.sampling_rate;
+          console.info(`[phono] sentence ${i + 1}/${sentences.length} in ${((performance.now() - sT0) / 1000).toFixed(1)}s: ${sec.toFixed(1)}s audio · "${s.slice(0, 50)}${s.length > 50 ? "…" : ""}"`);
+          if (raw.audio.length < raw.sampling_rate * 0.3) {
+            console.warn(`[phono] sentence ${i + 1} produced very short audio — voice likely skipped it`);
+          }
+          sampleRateRef.current = raw.sampling_rate;
+          chunksRef.current.push(raw.audio);
+        }
       }
-      console.info(`[phono] total: ${sentences.length} sentences in ${((performance.now() - t0) / 1000).toFixed(1)}s`);
+
+      console.info(`[phono] total ${((performance.now() - t0) / 1000).toFixed(1)}s ${usedFallback ? "(fallback)" : "(one-shot)"}`);
 
       if (chunksRef.current.length === 0) {
         throw new Error("no audio produced (try different text)");
