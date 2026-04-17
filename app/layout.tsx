@@ -42,11 +42,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${mono.variable} ${display.variable}`}>
-      {/* Inject COEP/COOP headers client-side so crossOriginIsolated=true regardless
-          of which domain or proxy serves this page. Required for SharedArrayBuffer
-          (pthreads WASM / onnxruntime-web). Causes a one-time transparent reload on
-          first visit to install the service worker. */}
-      <Script src="/coi-serviceworker.js" strategy="beforeInteractive" />
+      {/* Clean up any previously installed coi-serviceworker that caused regressions. */}
+      <Script id="sw-cleanup" strategy="beforeInteractive">{`
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            regs.forEach(function(r) { r.unregister(); });
+          });
+        }
+      `}</Script>
       <body className="min-h-screen bg-paper text-ink font-mono antialiased selection:bg-ink selection:text-paper">
         {children}
         <Analytics />
