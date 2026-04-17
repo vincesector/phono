@@ -19,14 +19,18 @@ export const metadata: Metadata = {
   title: "Phono TTS",
   description:
     "Free, open-source text-to-speech that runs entirely in your browser. No signup. No upload. No bullshit.",
+  metadataBase: new URL("https://phonoapp.vercel.app/phono"),
   openGraph: {
     title: "Phono TTS",
     description: "BROWSER-NATIVE TEXT TO SPEECH. ZERO COST.",
     type: "website",
+    url: "https://phonoapp.vercel.app/phono",
   },
   twitter: {
     card: "summary_large_image",
     creator: "@0xEvinho",
+    title: "Phono TTS",
+    description: "Browser-native text-to-speech. Zero cost.",
   },
 };
 
