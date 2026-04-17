@@ -4,7 +4,7 @@
 
 Phono runs [Kokoro-82M](https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX) entirely inside your browser via [transformers.js](https://huggingface.co/docs/transformers.js). Your text never touches a server. Generate audio, download MP3, share a link.
 
-Live: [phono.vercel.app](https://phono-lilac.vercel.app)
+Live: [phono.vercel.app](https://phonoapp.vercel.app)
 
 ## Stack
 
