@@ -38,7 +38,7 @@ export function Hero() {
             <span>↳ runs on device</span>
             <span>↳ {VOICES.length} voices</span>
             <span>↳ 82M params</span>
-            <span>↳ WASM</span>
+            <span>↳ WebGPU / WASM</span>
           </div>
           <p className="mt-4 max-w-md text-[10px] uppercase leading-relaxed text-fog md:text-[11px]">
             ⓘ first run downloads a ~82MB model to your device.

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { getTTS, isTTSReady, type ProgressInfo } from "@/lib/tts";
+import { getTTS, isTTSReady, detectBackend, getBackend, type ProgressInfo, type BackendInfo } from "@/lib/tts";
 import { concatFloat32 } from "@/lib/wav";
 import { encodeMp3 } from "@/lib/mp3";
 import { createShareLink, buildTwitterIntent } from "@/lib/share";
@@ -35,6 +35,8 @@ export function TTSStudio() {
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [shareError, setShareError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [backend, setBackend] = useState<BackendInfo | null>(null);
+  const [backendUnsupported, setBackendUnsupported] = useState(false);
 
   const ctxRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
@@ -70,6 +72,13 @@ export function TTSStudio() {
       analyserRef.current?.disconnect();
       ctxRef.current?.close();
     };
+  }, []);
+
+  // Detect backend on mount — fast probe, shows WebGPU/WASM badge or unsupported message.
+  useEffect(() => {
+    detectBackend()
+      .then((b) => setBackend(b))
+      .catch(() => setBackendUnsupported(true));
   }, []);
 
   useEffect(() => {
@@ -384,27 +393,32 @@ export function TTSStudio() {
                 </div>
               )}
 
-              {!busy && !ready && (
+              {!busy && !ready && !backendUnsupported && (
                 <div className="mb-3 flex items-center justify-between gap-2 border border-fog px-3 py-2 text-[10px] uppercase text-fog">
                   <span className="truncate">
                     {preloading
                       ? `↓ preloading model ${loadPct ? Math.round(loadPct) + "%" : ""}`
-                      : "~82MB downloads on first SPEAK"}
+                      : `~${backend?.modelSizeMB ?? 82}MB downloads on first SPEAK`}
                   </span>
-                  <span className="shrink-0">first run only</span>
+                  <span className="shrink-0">{backend ? `> ${backend.device.toUpperCase()}` : "first run only"}</span>
                 </div>
               )}
               {!busy && ready && (
                 <div className="mb-3 flex items-center justify-between gap-2 border border-signal px-3 py-2 text-[10px] uppercase text-signal">
                   <span>● model cached · instant</span>
-                  <span className="shrink-0">ready</span>
+                  <span className="shrink-0">{backend ? `> ${backend.device.toUpperCase()}` : "ready"}</span>
+                </div>
+              )}
+              {!busy && backendUnsupported && (
+                <div className="mb-3 border border-signal px-3 py-2 text-[10px] uppercase text-signal">
+                  browser not supported — open in Chrome, Firefox, or iOS 18+ Safari
                 </div>
               )}
 
               <button
                 type="button"
                 onClick={handleSpeak}
-                disabled={busy || !text.trim()}
+                disabled={busy || !text.trim() || backendUnsupported}
                 className="w-full border-2 border-signal bg-signal py-5 font-display text-4xl leading-none tracking-wider text-ink transition-colors hover:bg-paper hover:text-signal disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {busy ? "…WORKING" : "SPEAK."}
@@ -494,7 +508,8 @@ export function TTSStudio() {
             <div className="border-2 border-ink bg-dust/40 p-4 text-[11px] uppercase leading-relaxed md:text-xs">
               <div className="mb-2 font-bold">[ FIRST RUN ]</div>
               <p className="text-smoke">
-                First generation downloads a ~82MB kokoro model (q8) to your device.
+                First generation downloads the Kokoro model to your device —
+                ~82MB on WASM (q8), ~165MB on WebGPU (fp16).
                 Cached forever after. Every run after is near-instant.
               </p>
             </div>
