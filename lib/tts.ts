@@ -47,7 +47,7 @@ export async function getTTS(onProgress?: ProgressCb): Promise<KokoroInstance> {
     // Problem 1 — WebKit JIT crash (WebKit bug #304810):
     //   The default JSEP wasm uses ASYNCIFY, which causes WebKit's OMG JIT to
     //   spin infinitely during compilation, killing the tab.
-    //   Fix: use fs-eire's custom non-threaded, non-JSEP build (ort-wasm-simd).
+    //   Fix: use non-JSEP threaded build (no ASYNCIFY) served from /public.
     //
     // Problem 2 — inference hangs after model loads:
     //   The "threaded" wasm build spawns a proxy Web Worker by default and uses
@@ -63,8 +63,8 @@ export async function getTTS(onProgress?: ProgressCb): Promise<KokoroInstance> {
       onnxWasm.proxy = false;
       onnxWasm.numThreads = 1;
       onnxWasm.wasmPaths = {
-        wasm: "/phono/ort-wasm-simd.wasm",
-        mjs: "/phono/ort-wasm-simd.mjs",
+        wasm: "/phono/ort-wasm-simd-threaded.wasm",
+        mjs: "/phono/ort-wasm-simd-threaded.mjs",
       };
     }
 
